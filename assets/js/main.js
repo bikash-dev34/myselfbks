@@ -230,3 +230,26 @@
     });
 
 })(jQuery);
+
+
+
+// adding extra js
+(function () {
+  var arrayList, key, val;
+
+  arrayList = ["first", "second", "third", "fourth"];
+
+  for (key in arrayList) {
+    if (window.CP.shouldStopExecution(1)) {
+      break;
+    }
+    val = arrayList[key];
+    console.log("key is " + key + " and val is " + val);
+    $("li").each(function (index) {
+      if (parseInt(index) === parseInt(key)) {
+        return $(this).attr("data-anchor", val);
+      }
+    });
+  }
+  window.CP.exitedLoop(1);
+}.call(this));

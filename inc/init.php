@@ -3,7 +3,8 @@
  * Load All required files
  */
 $files_loader=array(
-    'inc/functions/assets.php',
+    '/inc/functions/assets.php',
+    '/inc/functions/setup.php',
 );
 /**
  * Load The File
